@@ -1,5 +1,7 @@
 import { Download } from "lucide-react"
 
+const BACKEND_URL = "https://hireflow-nwtx.onrender.com"
+
 const ChatProfile = ({ user }) => {
 
   if (!user) return null
@@ -7,11 +9,11 @@ const ChatProfile = ({ user }) => {
   const avatar =
     user.avatar?.startsWith("http")
       ? user.avatar
-      : `http://localhost:5000/uploads/${user.avatar}`
+      : `${BACKEND_URL}/uploads/${user.avatar}`
 
   const resume =
     user.resume
-      ? `http://localhost:5000/uploads/${user.resume}`
+      ? `${BACKEND_URL}/uploads/${user.resume}`
       : null
 
   return (

@@ -56,8 +56,8 @@ const Message = require("./models/Message");
 const server = http.createServer(app);
 
 const allowedOrigins = [
-  "http://localhost:5000",
-  "https://hireflow-nwtx.onrender.com"
+  "http://localhost:5173",
+  "https://hireflow-frontend.onrender.com"
 ]
 
 const io = new Server(server, {
