@@ -55,9 +55,14 @@ const Message = require("./models/Message");
 
 const server = http.createServer(app);
 
+const allowedOrigins = [
+  "http://localhost:5000",
+  "https://hireflow-nwtx.onrender.com"
+]
+
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: allowedOrigins,
     methods: ["GET", "POST"]
   }
 });
