@@ -17,11 +17,14 @@ const fs = require("fs");
 
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "http://localhost:5173",
+      "https://hireflow-1-rycj.onrender.com"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    credentials: true
   })
-)
+);
 
 connectDB()
 
@@ -55,18 +58,16 @@ const Message = require("./models/Message");
 
 const server = http.createServer(app);
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://hireflow-frontend.onrender.com"
-]
-
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
-    methods: ["GET", "POST"]
+    origin: [
+      "http://localhost:5173",
+      "https://hireflow-1-rycj.onrender.com"
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
-
 let onlineUsers = {};
 
 io.on("connection", (socket) => {
