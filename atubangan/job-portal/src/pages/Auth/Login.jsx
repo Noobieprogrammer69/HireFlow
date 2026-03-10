@@ -11,13 +11,16 @@ import {
 import { useState } from "react";
 import { validateEmail } from "../../utils/helper";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 import { API_PATHS } from "../../utils/api";
 import axiosInstance from "../../utils/axios";
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -94,11 +97,11 @@ const Login = () => {
         login(response.data, token);
 
         setTimeout(() => {
-          window.location.href =
-            role === "employer"
-              ? "/employer-dashboard"
-              : "/find-jobs";
-        }, 1500);
+        navigate(
+          role === "employer"
+            ? "/employer-dashboard"
+            : "/find-jobs"
+        )}, 1500);
       }
     } catch (error) {
       setFormState((prev) => ({
@@ -132,10 +135,11 @@ const Login = () => {
 
     login(user, token);
 
-    window.location.href =
+    navigate(
       user.role === "employer"
         ? "/employer-dashboard"
-        : "/find-jobs";
+        : "/find-jobs"
+    );
 
   } catch (error) {
     console.error("Google Login Failed", error);
@@ -274,12 +278,12 @@ const Login = () => {
           <div className="text-center">
             <p className="text-gray-400">
               Don't have an account?{" "}
-              <a
+              <Link
                 href="/register"
                 className="text-orange-400 hover:text-orange-300 font-medium"
               >
                 Create Here
-              </a>
+              </Link>
             </p>
           </div>
 
