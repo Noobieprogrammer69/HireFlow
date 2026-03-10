@@ -13,6 +13,7 @@ import {
   Building2,
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   validateAvatar,
   validateEmail,
@@ -25,6 +26,7 @@ import { useAuth } from "../../context/AuthContext";
 
 const Register = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -153,11 +155,11 @@ const Register = () => {
         login(response.data, token);
 
         setTimeout(() => {
-          window.location.href =
-            formData.role === "employer"
-              ? "/employer-dashboard"
-              : "/find-jobs";
-        }, 2000);
+        navigate(
+          formData.role === "employer"
+            ? "/employer-dashboard"
+            : "/find-jobs"
+        )}, 2000);
       }
     } catch (error) {
       setFormState((prev) => ({
