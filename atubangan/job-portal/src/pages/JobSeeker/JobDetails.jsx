@@ -1,4 +1,4 @@
-import { MapPin, IndianRupee, Building2, Clock, Users } from "lucide-react";
+import { MapPin, PhilippinePeso, Building2, Clock, Users } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
@@ -132,7 +132,7 @@ const JobDetails = () => {
                 <div className="flex items-center gap-4">
 
                   <div className="bg-orange-500 p-3 rounded-lg">
-                    <IndianRupee className="text-white" size={20} />
+                    <PhilippinePeso className="text-white" size={20} />
                   </div>
 
                   <div>

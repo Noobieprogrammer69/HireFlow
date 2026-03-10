@@ -8,8 +8,8 @@ const JobCard = ({ job, onClick, onToggleSave, onApply, saved, hideApply }) => {
 
   const formatSalary = (min, max) => {
     const formatNumber = (num) => {
-      if (num >= 1000) return `$${(num / 1000).toFixed(0)}k`;
-      return `$${num}`;
+      if (num >= 1000) return `₱${(num / 1000).toFixed(0)}k`;
+      return `₱${Math.round(num)}`;
     };
 
     const monthlyMin = min / 12;
