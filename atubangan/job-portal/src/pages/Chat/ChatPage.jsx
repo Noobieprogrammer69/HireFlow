@@ -8,7 +8,7 @@ import { ArrowLeft, Send } from "lucide-react";
 import MessageBubble from "./MessageBubble";
 import ChatProfile from "./components/ChatProfile";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://hireflow-nwtx.onrender.com/");
 
 const ChatPage = () => {
 
@@ -96,7 +96,7 @@ const ChatPage = () => {
   const getAvatar = (avatar) => {
     if (!avatar) return "/avatar.png";
     if (avatar.startsWith("http")) return avatar;
-    return `http://localhost:5000/uploads/${avatar}`;
+    return `https://hireflow-nwtx.onrender.com//uploads/${avatar}`;
   };
 
   if (!allowed) {
