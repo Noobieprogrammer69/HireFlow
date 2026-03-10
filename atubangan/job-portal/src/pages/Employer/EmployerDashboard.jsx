@@ -13,8 +13,8 @@ import axiosInstance from "../../utils/axios";
 import { API_PATHS } from "../../utils/api";
 import DashboardLayout from "../../components/layout/DashboardLayout";
 import LoadingSpinner from "../../components/LoadingSpinner";
-import JobDashboardCard from "../../components/cards/JobDashboardCard";
-import ApplicantDashboardCard from "../../components/cards/ApplicantDashboardCard";
+import JobDashboardCard from "../../components/Cards/JobDashboardCard";
+import ApplicantDashboardCard from "../../components/Cards/ApplicantDashboardCard";
 
 const Card = ({ title, headerAction, subtitle, className, children }) => {
   return (
