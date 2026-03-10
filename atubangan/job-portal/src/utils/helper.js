@@ -66,7 +66,7 @@ export const validateAvatar = (file) => {
 };
 
 export const formatINR = (amount) =>
-  new Intl.NumberFormat("en-IN", {
+  new Intl.NumberFormat("en-PH", {
     style: "currency",
     currency: "PHP",
     maximumFractionDigits: 0,

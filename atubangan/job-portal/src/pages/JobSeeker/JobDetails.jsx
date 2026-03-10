@@ -60,7 +60,6 @@ const JobDetails = () => {
         {jobDetails && (
           <div className="bg-[#141414] border border-white/10 rounded-xl p-8">
 
-            {/* HERO SECTION */}
             <div className="border-b border-white/10 pb-8 mb-8">
 
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
@@ -105,7 +104,6 @@ const JobDetails = () => {
 
               </div>
 
-              {/* TAGS */}
               <div className="flex flex-wrap gap-3 mt-6">
 
                 <span className="bg-[#1a1a1a] text-gray-300 px-4 py-1.5 rounded-full text-sm">
@@ -127,7 +125,6 @@ const JobDetails = () => {
 
             </div>
 
-            {/* SALARY CARD */}
             <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-6 mb-8">
 
               <div className="flex items-center justify-between">
@@ -161,7 +158,6 @@ const JobDetails = () => {
 
             </div>
 
-            {/* DESCRIPTION */}
             <div className="mb-10">
 
               <h3 className="text-lg font-semibold text-white mb-4">
@@ -174,7 +170,6 @@ const JobDetails = () => {
 
             </div>
 
-            {/* REQUIREMENTS */}
             <div>
 
               <h3 className="text-lg font-semibold text-white mb-4">
