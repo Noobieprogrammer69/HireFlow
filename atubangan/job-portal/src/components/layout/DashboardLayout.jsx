@@ -12,6 +12,7 @@ import { useAuth } from "../../context/AuthContext";
 import { NAVIGATION_MENU } from "../../utils/data";
 import ProfileDropDown from "./ProfileDropDown";
 import { useNotification } from "../../context/NotificationContext";
+import bg from '../../assets/hireflow-bg.png'
 
 const NavigationItem = ({ item, isActive, onClick, isCollapsed }) => {
 
@@ -134,9 +135,13 @@ const DashboardLayout = ({ children }) => {
 
             <Link className="flex items-center space-x-3" to="/">
 
-              <div className="h-8 w-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/30">
-                <Briefcase className="h-5 w-5 text-white" />
-              </div>
+            <div className="w-14 h-14 bg-zinc-900 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+              <img 
+                src={bg} 
+                alt="logo"
+                className="w-11 h-11 object-contain"
+              />
+            </div>
 
               <span className="text-white font-bold text-xl">
                 HireFlow
